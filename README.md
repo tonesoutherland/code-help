@@ -24,7 +24,7 @@
 `git show summary`
 
 ---
-## Fix Specific Situations
+## Purposeful Workflows
 
 ### To update in my local master branch, and on my forked repo
 - Ensure local branch is on master, because we want to merge into local master, from upstream master `git checkout master`
