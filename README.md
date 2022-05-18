@@ -20,9 +20,25 @@
 `git push`
 ### Show history using alias
 `git logg` 
+### Show last committed file
+`git show summary`
 
 ---
 ## Fix Specific Situations
+
+### To update in my local master branch, and on my forked repo
+- Ensure local branch is on master, because we want to merge into local master, from upstream master `git checkout master`
+- fetch changes from upstream to local `git fetch upstream`
+- merge changes from fetched upstream master branch to to local master branch `git merge upstream/master` this will merge into whatever the current selected branch is, from the name provided as a parameter
+- push changes to forked repo (users repo) `git push origin master`
+
+### Rebase my local feature (or develop) branch on top of latest changes to upstream master
+- We want to do this to keep a clean Git history, or to be able to say "I'm working on my feature from the lastest version of master everyone else is using"
+- follow steps above to update local master, then do the following:
+- `git checkout develop`
+- `git rebase master`
+- WARNING: NEVER rebase on a public branch
+
 
 ### Test code from a co-worker's remote branch
 `git remote add <remote-name> https://github.com/<username>/<project-name>.git`
@@ -56,3 +72,7 @@ _user is on develop branch_
 ## Useful links
 - [Branching basics - remote branching](https://git-scm.com/book/id/v2/Git-Branching-Remote-Branches)
 - [Clean up a fork and restart from upstream](https://stackoverflow.com/questions/9646167/clean-up-a-fork-and-restart-it-from-the-upstream)
+
+## Searching Tools
+### Find file in local drive/folder
+`find . -name "filename.txt"`
