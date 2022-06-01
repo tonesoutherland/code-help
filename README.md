@@ -22,6 +22,9 @@
 `git logg` 
 ### Show last committed file
 `git show summary`
+### Abandon file changes
+`git restore .`
+`git restore <filename>`
 
 ---
 ## Purposeful Workflows
@@ -30,14 +33,14 @@
 - Ensure local branch is on master, because we want to merge into local master, from upstream master `git checkout master`
 - fetch changes from upstream to local `git fetch upstream`
 - merge changes from fetched upstream master branch to to local master branch `git merge upstream/master` this will merge into whatever the current selected branch is, from the name provided as a parameter
-- push changes to forked repo (users repo) `git push origin master`
+- push changes to forked repo in Github (developer's repo) `git push origin master`
 
 ### Rebase my local feature (or develop) branch on top of latest changes to upstream master
-- We want to do this to keep a clean Git history, or to be able to say "I'm working on my feature from the lastest version of master everyone else is using"
+- We want to do this to keep a clean Git history, or to be able to say "I'm working on my feature from the latest version of master everyone else is using"
 - follow steps above to update local master, then do the following:
 - `git checkout develop`
 - `git rebase master`
-- WARNING: NEVER rebase on a public branch
+- WARNING: NEVER, EVER, EVER rebase on a public branch
 
 
 ### Test code from a co-worker's remote branch
