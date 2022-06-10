@@ -69,8 +69,8 @@ _user is on develop branch_
 ### Create alias for git log
 `git config --global alias.logg "log --graph --decorate --pretty=oneline --abbrev-commit --all"`
 ### Create aliases to publish new branch
-`git config --global alias.branch-name "rev-parse --abbrev-ref HEAD"`
-`git config --global alias.pub "git push -u origin $(git branch-name)"`
+`git config --global alias.branch-name "rev-parse --abbrev-ref HEAD"`  
+`git config --global alias.pub "git push -u origin $(git branch-name)"`  
 This allows you to run `git pub` to push your new local branch to the repo
 ### Show aliases
 `git config --get-regexp alias`
