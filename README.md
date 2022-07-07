@@ -1,52 +1,65 @@
 ## General Commands
 ### Clone repo to local from existing
-`git clone https://github.com/<user-name>/<repo-name>.git`
+- `git clone https://github.com/<user-name>/<repo-name>.git`
 ### Show all branches
-`git branch -va`
+- `git branch -va`
 ### Show status in current folder
-`git status`
+- `git status`
 ### Commit with message
-`git commit -m "message"`
+- `git commit -m "message"`
 ### Push changes to origin (on server)
-`git push`
+- `git push`
 ### Show remotes
-`git remote -v`
+- `git remote -v`
 ### Fetch upstream changes - fetch does NOT merge w/local
-`git fetch upstream`
+- `git fetch upstream`
 ### Change branch
-`git checkout <branch-name>`
+- `git checkout <branch-name>`
 ### Merge branch with upstream, then push to update fork
-`git merge upstream/<branch-name>`
-`git push`
+- `git merge upstream/<branch-name>`
+- `git push`
 ### Show history using alias
-`git logg` 
+- `git logg` 
 ### Show last committed file
-`git show summary`
+- `git show summary`
 ### Abandon file changes
-`git restore .`
-`git restore <filename>`
+- `git restore .`
+- `git restore <filename>`
 
 ---
 ## Purposeful Workflows
 
 ### To update in my local master branch, and on my forked repo
-- Ensure local branch is on master, because we want to merge into local master, from upstream master `git checkout master`
-- fetch changes from upstream to local `git fetch upstream`
-- merge changes from fetched upstream master branch to to local master branch `git merge upstream/master` this will merge into whatever the current selected branch is, from the name provided as a parameter
-- push changes to forked repo in Github (developer's repo) `git push origin master`
+- Ensure local branch is on master, because we want to merge into local master, from upstream master 
+    - `git checkout master`
+- fetch changes from upstream to local 
+    - `git fetch upstream`
+- merge changes from fetched upstream master branch to to local master branch. this will merge into whatever the current selected branch is, from the name provided as a parameter
+    - `git merge upstream/master`
+- push changes to forked repo in Github (developer's repo) 
+    - `git push origin master`
 
 ### Rebase my local feature (or develop) branch on top of latest changes to upstream master
 - We want to do this to keep a clean Git history, or to be able to say "I'm working on my feature from the latest version of master everyone else is using"
 - follow steps above to update local master, then do the following:
-- `git checkout develop`
-- `git rebase master`
+    - `git checkout develop`
+    - `git rebase master`
 - WARNING: NEVER, EVER, EVER rebase on a public branch
 
 
 ### Test code from a co-worker's remote branch
-`git remote add <remote-name> https://github.com/<username>/<project-name>.git`
-`git fetch <remote-name> <branch-name-source>:<branch-name-target>`
-`git checkout <branch-name>`
+- when a co-worker submits a PR and you want to pull to your local and verify before approving
+    - `git remote add <remote-name> https://github.com/<username>/<repo-name>.git`
+    - `git fetch <remote-name> <branch-name-source>:<branch-name-target>`
+    - `git checkout <branch-name>`
+- note: add the remote to the users repo, NOT the repo with branch
+
+### Test code from a PR
+- when a co-worker submits a PR and you want to pull and test, but from the PR branch in Github, instead of the co-workers direct repo
+- Fetch the reference to the pull request based on its ID number, creating a new branch in the process.
+    - `git fetch <remote-name> pull/<PR-ID#>/head:<branch-name>`
+        - ex: `git fetch upstream pull/59/head:feature-KINT-198`
+    - [Github - Checking out Pull Requests locally](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally)
 
 ### If forked repository is out of sync with upstream
 - delete master branch: `git branch -D master`
@@ -67,9 +80,9 @@ _user is on develop branch_
 ---
 ## Aliases
 ### Create alias for git log
-`git config --global alias.logg "log --graph --decorate --pretty=oneline --abbrev-commit --all"`
+- `git config --global alias.logg "log --graph --decorate --pretty=oneline --abbrev-commit --all"`
 ### Show aliases
-`git config --get-regexp alias`
+- `git config --get-regexp alias`
 
 ---
 ## Useful links
@@ -78,4 +91,4 @@ _user is on develop branch_
 
 ## Searching Tools
 ### Find file in local drive/folder
-`find . -name "filename.txt"`
+- `find . -name "filename.txt"`
