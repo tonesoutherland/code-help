@@ -29,6 +29,18 @@
 ---
 ## Purposeful Workflows
 
+### To stash my changes, fetch and merge from a branch, and pop my stash
+- Check status
+    - `git status`
+- Stash changes - this will stash tracked and untracked changed files
+    - `git stash --include-untracked`
+- Verify stash happened and that your working status is clean
+    - `git status`
+- Fetch and merge changes from desired branch
+    - `git pull <remote-name> <remote-branch-name>`
+- Assuming fast-forward occurs (no manual merging needed), then pop changes off stash
+    - `git stash pop`
+
 ### To update in my local master branch, and on my forked repo
 - Ensure local branch is on master, because we want to merge into local master, from upstream master 
     - `git checkout master`
@@ -52,7 +64,8 @@
     - `git remote add <remote-name> https://github.com/<username>/<repo-name>.git`
     - `git fetch <remote-name> <branch-name-source>:<branch-name-target>`
     - `git checkout <branch-name>`
-- note: add the remote to the users repo, NOT the repo with branch
+- note 1: add the remote to the users repo, NOT the repo with branch
+- note 2: the branch name must be different (unsure why)
 
 ### Test code from a PR
 - when a co-worker submits a PR and you want to pull and test, but from the PR branch in Github, instead of the co-workers direct repo
