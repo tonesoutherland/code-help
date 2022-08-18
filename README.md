@@ -1,4 +1,4 @@
-## General Commands
+## General Commands 
 ### Clone repo to local from existing
 - `git clone https://github.com/<user-name>/<repo-name>.git`
 ### Show all branches
