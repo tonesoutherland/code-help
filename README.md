@@ -53,11 +53,20 @@
 
 ### Rebase my local feature (or develop) branch on top of latest changes to upstream master
 - We want to do this to keep a clean Git history, or to be able to say "I'm working on my feature from the latest version of master everyone else is using"
+- This needs to happen with the feature branch checked out
 - follow steps above to update local master, then do the following:
     - `git checkout develop`
     - `git rebase master`
 - WARNING: NEVER, EVER, EVER rebase on a public branch
 
+#### Alternate flow - combines git fetch and git merge with rebase in one nice step
+- `git pull upstream master --rebase`
+- `git push origin feature-branch-name --force` (--force is required, otherwise it won't be allowed)
+	
+- If there are merge conflicts
+    - `git mergetool`
+	- `git commit -am "Fix merge conflicts"`
+	- `git push origin feature-branch-name --force`
 
 ### Test code from a co-worker's remote branch
 - when a co-worker submits a PR and you want to pull to your local and verify before approving
