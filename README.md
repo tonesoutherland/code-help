@@ -60,6 +60,7 @@
 - WARNING: NEVER, EVER, EVER rebase on a public branch
 
 #### Alternate flow - combines git fetch and git merge with rebase in one nice step
+Do this while whatever feature branch your are working on is checked out
 - `git pull upstream master --rebase`
 - `git push origin feature-branch-name --force` (--force is required, otherwise it won't be allowed)
 	
