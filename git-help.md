@@ -65,9 +65,10 @@ Do this while whatever feature branch your are working on is checked out
 - `git push origin feature-branch-name --force` (--force is required, otherwise it won't be allowed)
 	
 - If there are merge conflicts
-    - `git mergetool`
-	- `git commit -am "Fix merge conflicts"`
-	- `git push origin feature-branch-name --force`
+    - `git mergetool` .. or use your merge tool of choice (Visual Studio, VS Code)
+	- `git commit -am "Fix merge conflicts"` commit the final versions of the merged file(s)
+    - `git rebase --continue` tell the rebase to continue
+	- `git push origin feature-branch-name` push to your origin, `--force` should not be required here
 
 ### Test code from a co-worker's remote branch
 - when a co-worker submits a PR and you want to pull to your local and verify before approving
