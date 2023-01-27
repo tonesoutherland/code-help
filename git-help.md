@@ -25,6 +25,8 @@
 ### Abandon file changes
 - `git restore .`
 - `git restore <filename>`
+### Prune out of date branch list
+- `git fetch origin --prune`
 
 ---
 ## Purposeful Workflows
