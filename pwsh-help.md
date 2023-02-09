@@ -17,3 +17,6 @@
         - https://devblogs.microsoft.com/scripting/use-powershell-to-parse-event-log-for-shutdown-events/
 - show version of PowerShell
     - `get-host`
+
+- find text in files in current folder, recursive
+    - `Get-ChildItem -Recurse | Select-String "dummy" -List | Select Path`

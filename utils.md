@@ -41,3 +41,7 @@ Become a patron at https://www.patreon.com/bcurran3
 </pre>
 
 - All done!
+
+## CLI Tools
+- posh-git
+- oh-my-posh
