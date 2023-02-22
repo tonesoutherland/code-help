@@ -20,3 +20,14 @@
 
 - find text in files in current folder, recursive
     - `Get-ChildItem -Recurse | Select-String "dummy" -List | Select Path`
+
+
+## Config
+
+- set oh-my-posh theme
+    - run `code $PROFILE` in a powershell prompt
+    - edit this line:
+    	- `oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\multiverse-neon.omp.json" | Invoke-Expression`
+    - change `.omp.json` filename to switch to a new theme
+    - select themes from: https://ohmyposh.dev/docs/themes
+    - install desired font: https://ohmyposh.dev/docs/installation/fonts
