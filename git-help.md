@@ -27,6 +27,8 @@
 - `git restore <filename>`
 ### Prune out of date branch list
 - `git fetch origin --prune`
+### Setup auto remote branch creation for origin
+- `git config --global --add --bool push.autoSetupRemote true`
 
 ---
 ## Purposeful Workflows
