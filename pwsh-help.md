@@ -21,6 +21,14 @@
 - find text in files in current folder, recursive
     - `Get-ChildItem -Recurse | Select-String "dummy" -List | Select Path`
 
+### Environment Variables
+- Show vars (sort by name)
+    - `get-childitem -path env:* | sort-object name`
+- Add var
+    - `$Env:[varname] = "[varvalue]"`
+- Remove var
+    - `[Environment]::SetEnvironmentVariable("[varname]", $null, "Machine")`
+
 
 ## Config
 

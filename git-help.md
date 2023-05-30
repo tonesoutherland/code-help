@@ -124,3 +124,6 @@ This allows you to run `git pub` to push your new local branch to the repo
 ## Searching Tools
 ### Find file in local drive/folder
 - `find . -name "filename.txt"`
+
+### Gitk
+- type `gitk` in source directory to open a GUI
