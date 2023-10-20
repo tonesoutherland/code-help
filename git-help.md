@@ -29,6 +29,8 @@
 - `git fetch origin --prune`
 ### Setup auto remote branch creation for origin
 - `git config --global --add --bool push.autoSetupRemote true`
+### Reset local master branch - when local master is ahead of remote/origin by X commits from local merges
+- `git reset --hard origin/master`
 
 ---
 ## Purposeful Workflows
