@@ -6,7 +6,9 @@
 ### Show status in current folder
 - `git status`
 ### Commit with message
-- `git commit -m "message"`
+- `git commit -m "commit message"`
+### Add and commit with message (in same command)
+- `git commit -am "commit message"`
 ### Push changes to origin (on server)
 - `git push`
 ### Show remotes
@@ -31,6 +33,8 @@
 - `git config --global --add --bool push.autoSetupRemote true`
 ### Reset local master branch - when local master is ahead of remote/origin by X commits from local merges
 - `git reset --hard origin/master`
+### Show simplified log
+- `git log --all --graph`
 
 ---
 ## Purposeful Workflows
